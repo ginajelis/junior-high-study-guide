@@ -9,38 +9,50 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
-<button class="theme-toggle" id="themeToggle" type="button" aria-label="切換深淺色">◐</button>
-
-<header class="masthead">
-  <div class="masthead-inner">
-    <p class="eyebrow">學習節奏 · 國中一年級</p>
-    <h1>跟不上的不是難度，<br>是消化的速度</h1>
-    <p class="standfirst">
-      國小升國一的落差，通常不是內容變難，而是三件事同時發生：科目從四科變八科以上、
-      老師從「教到你會」變成「講完進度」、考試從「單元結束才考」變成「每天都考」。
-      所以真正缺的往往不是讀書時間，而是<strong>當天消化的機制</strong>。
-    </p>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="#top">
+      <span class="mark">📘</span>
+      <span class="name">國一學習節奏指南</span>
+    </a>
+    <div class="header-actions">
+      <button class="header-btn" id="themeToggle" type="button" aria-label="切換深淺色">◐</button>
+      <button class="header-btn" id="printBtn" type="button">列印</button>
+    </div>
   </div>
 </header>
 
-<div class="shell">
+<div class="column" id="top">
+
+  <div class="crumbs">
+    <span class="crumb-pill">學習節奏</span>
+    <span>國中一年級</span>
+  </div>
+
+  <h1>跟不上的不是難度，是消化的速度</h1>
+
+  <p class="standfirst">
+    國小升國一的落差，通常不是內容變難，而是三件事同時發生：科目從四科變八科以上、
+    老師從「教到你會」變成「講完進度」、考試從「單元結束才考」變成「每天都考」。
+    所以真正缺的往往不是讀書時間，而是<strong>當天消化的機制</strong>。
+  </p>
 
   <nav class="toc" aria-label="目錄">
     <div class="toc-label">目錄</div>
     <ol>
-      <li><a href="#rhythm">週間作息安排<span class="star">★</span></a></li>
-      <li><a href="#homework">作業就是複習<span class="star">★</span></a></li>
-      <li><a href="#stuck">不會寫的時候</a></li>
-      <li><a href="#types">債務型與累積型<span class="star">★</span></a></li>
-      <li><a href="#onesentence">一句話筆記<span class="star">★</span></a></li>
-      <li><a href="#quiz">頻繁小考的技巧</a></li>
-      <li><a href="#resources">資源清單</a></li>
-      <li><a href="#signals">給家長：訊號判讀</a></li>
+      <li><a href="#rhythm"><span class="idx">01</span>週間作息安排<span class="star">★</span></a></li>
+      <li><a href="#homework"><span class="idx">02</span>作業就是複習<span class="star">★</span></a></li>
+      <li><a href="#stuck"><span class="idx">03</span>不會寫的時候</a></li>
+      <li><a href="#types"><span class="idx">04</span>債務型與累積型<span class="star">★</span></a></li>
+      <li><a href="#onesentence"><span class="idx">05</span>一句話筆記<span class="star">★</span></a></li>
+      <li><a href="#quiz"><span class="idx">06</span>頻繁小考的技巧</a></li>
+      <li><a href="#resources"><span class="idx">07</span>資源清單</a></li>
+      <li><a href="#signals"><span class="idx">08</span>給家長：訊號判讀</a></li>
     </ol>
   </nav>
 
@@ -604,14 +616,14 @@
     </section>
 
   </main>
-</div>
 
-<footer>
-  <div class="shell" style="display:block;max-width:68rem;">
+  <footer class="site-footer">
     <p>國一學習節奏指南 · 為國中一年級的適應期整理</p>
     <p>可以直接列印（Cmd／Ctrl + P）貼在書桌前。</p>
-  </div>
-</footer>
+  </footer>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到頂端">↑</button>
 
 <script src="assets/app.js"></script>
 </body>

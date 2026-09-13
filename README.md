@@ -99,6 +99,74 @@ python3 -m http.server 8000 --directory docs
 
 ## 插圖
 
+主角是一位國中一年級男生——這份指南的讀者就是他。
+
+**六篇用 AI 生成的日系動畫插圖**（`docs/assets/art/*.jpg`，1000×563）：
+hero、01、02、03、05、06。用 ChatGPT 在同一個對話裡連續生成，所以是同一個角色、
+同一種畫風：明亮的電視動畫感、線條清楚、平塗上色。
+
+**四篇維持手繪 SVG**（`docs/assets/art/*.svg`）：04、07、08、09。
+其中 04（左右分割對照）和 09（關卡路線圖）本來就是概念圖，不是場景圖；
+07 和 08 則是生成過程中受限於工具沒有完成，暫時沿用向量版本。
+
+SVG 的繪製腳本在 `tools/art/`：
+
+```bash
+python3 tools/art/draw1.py && python3 tools/art/draw_hero.py && python3 tools/art/draw2.py
+```
+
+> 之後若要補齊 07、08 的動畫版，提示詞在 `tools/remaining-prompts.md`，
+> 生成後存成 `docs/assets/art/07-resources.jpg` 和 `08-signals.jpg`，
+> 再把頁面上的 `.svg` 改成 `.jpg`、重跑 `./tools/og-build.sh` 即可。
+
+## 社群分享圖（Open Graph）
+
+臉書、LINE、Threads 這類平台**不支援 SVG**，所以另外產出 10 張 1200×630 的 PNG
+放在 `docs/assets/og/`：首頁一張，九篇各一張。每張都用該頁自己的插畫，
+分享出去的預覽圖就跟點進來的頁面對得上。
+
+```bash
+./tools/og-build.sh
+```
+
+腳本會用 `tools/art/og.py` 產生 SVG，再經 QuickLook 轉 PNG、`sips` 裁成 1200×630。
+`build/` 是中繼檔，不進版控。
+
+改標題或副標也是改 `tools/art/og.py` 裡的 `CARDS` 陣列。SVG 的文字不會自動換行，
+所以每一行要自己斷。
+
+> 換過圖之後記得到
+> [Facebook 分享偵錯工具](https://developers.facebook.com/tools/debug/)
+> 按 Scrape Again，否則臉書會沿用舊的快取。
+
+
+## 第 9 篇的闖關
+
+七道關卡對應第 1–7 篇，每一關是一個晚上真的會遇到的決定：選項本身都合理，
+但只有一個符合前面幾篇的原則。選錯會說明原因並可以重選——選錯才是重點。
+
+題目資料全部在 `docs/assets/quest.js` 最上方的 `STAGES` 陣列裡，
+每一關有 `scene`（情境）、`options`（`ok` 標記正解、`say` 是回饋）、
+以及 `link`（對應文章）。要改題目直接改那個陣列就好。
+
+
+## 本機預覽
+
+```bash
+python3 -m http.server 8000 --directory docs
+```
+
+然後開 http://localhost:8000
+
+## 部署
+
+- **GitHub Pages** — 設定為 `main` 分支的 `/docs` 目錄。
+- **Cloudflare** — 由 Workers Builds 監看這個 repo，push 後自行建置，不需要任何密鑰。
+  `.github/workflows/deploy-cloudflare.yml` 是備用路線，設了
+  `CLOUDFLARE_API_TOKEN` 和 `CLOUDFLARE_ACCOUNT_ID` 才會接手，否則自動跳過。
+
+## 插圖
+
 全部插圖都是為這個站繪製的 SVG，放在 `docs/assets/art/`，共 10 張、約 76KB
 （原本用的 CC0 照片是 1MB）。向量圖可無限縮放，在任何螢幕上都不會糊。
 

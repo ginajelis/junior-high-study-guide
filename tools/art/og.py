@@ -10,6 +10,7 @@ each card is drawn in the middle band of a 1200x1200 field. Crop 630
 from the centre afterwards and you get exactly the card back.
 """
 
+import base64
 import os
 import re
 
@@ -87,7 +88,19 @@ CARDS = [
 
 
 def inner(name):
-    """Strip a drawing's outer <svg> wrapper so it can be nested."""
+    """Return that page's artwork ready to nest inside the card.
+
+    Six chapters use generated raster art and four still use drawn SVG,
+    so each comes in differently: a photo is embedded as a base64 <image>
+    (QuickLook will not follow an external href when it rasterises), an
+    SVG just has its outer wrapper stripped.
+    """
+    jpg = os.path.join(ART, name + ".jpg")
+    if os.path.exists(jpg):
+        b64 = base64.b64encode(open(jpg, "rb").read()).decode("ascii")
+        return ('<image x="0" y="0" width="1000" height="563" '
+                'preserveAspectRatio="xMidYMid slice" '
+                'href="data:image/jpeg;base64,%s"/>' % b64)
     s = open(os.path.join(ART, name + ".svg"), encoding="utf-8").read()
     s = re.sub(r"^.*?<svg[^>]*>", "", s, flags=re.S)
     return re.sub(r"</svg>\s*$", "", s)

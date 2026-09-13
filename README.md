@@ -51,6 +51,27 @@ Noto Serif TC 標題、寬鬆的段落節奏。首頁是卡片三欄網格，分
 新增一篇文章時，複製任一個 `docs/posts/*.html` 當範本，再到 `docs/index.html`
 補一張卡片（`data-cat` 要對應篩選列的分類），並更新篩選列的篇數。
 
+## 社群分享圖（Open Graph）
+
+臉書、LINE、Threads 這類平台**不支援 SVG**，所以另外產出 10 張 1200×630 的 PNG
+放在 `docs/assets/og/`：首頁一張，九篇各一張。每張都用該頁自己的插畫，
+分享出去的預覽圖就跟點進來的頁面對得上。
+
+```bash
+./tools/og-build.sh
+```
+
+腳本會用 `tools/art/og.py` 產生 SVG，再經 QuickLook 轉 PNG、`sips` 裁成 1200×630。
+`build/` 是中繼檔，不進版控。
+
+改標題或副標也是改 `tools/art/og.py` 裡的 `CARDS` 陣列。SVG 的文字不會自動換行，
+所以每一行要自己斷。
+
+> 換過圖之後記得到
+> [Facebook 分享偵錯工具](https://developers.facebook.com/tools/debug/)
+> 按 Scrape Again，否則臉書會沿用舊的快取。
+
+
 ## 第 9 篇的闖關
 
 七道關卡對應第 1–7 篇，每一關是一個晚上真的會遇到的決定：選項本身都合理，
@@ -90,6 +111,27 @@ python3 -m http.server 8000 --directory docs
 ```bash
 python3 tools/art/draw1.py && python3 tools/art/draw_hero.py && python3 tools/art/draw2.py
 ```
+
+## 社群分享圖（Open Graph）
+
+臉書、LINE、Threads 這類平台**不支援 SVG**，所以另外產出 10 張 1200×630 的 PNG
+放在 `docs/assets/og/`：首頁一張，九篇各一張。每張都用該頁自己的插畫，
+分享出去的預覽圖就跟點進來的頁面對得上。
+
+```bash
+./tools/og-build.sh
+```
+
+腳本會用 `tools/art/og.py` 產生 SVG，再經 QuickLook 轉 PNG、`sips` 裁成 1200×630。
+`build/` 是中繼檔，不進版控。
+
+改標題或副標也是改 `tools/art/og.py` 裡的 `CARDS` 陣列。SVG 的文字不會自動換行，
+所以每一行要自己斷。
+
+> 換過圖之後記得到
+> [Facebook 分享偵錯工具](https://developers.facebook.com/tools/debug/)
+> 按 Scrape Again，否則臉書會沿用舊的快取。
+
 
 ## 第 9 篇的闖關
 

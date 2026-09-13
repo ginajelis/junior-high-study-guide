@@ -2,3 +2,6 @@ node_modules/
 .wrangler/
 .DS_Store
 *.log
+
+# generated share cards (source lives in tools/art/og.py)
+build/

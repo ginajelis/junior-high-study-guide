@@ -44,31 +44,28 @@
     onScroll();
   }
 
-  /* ── Table-of-contents highlighting ────────────────────── */
-  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a"));
-  var sections = links
-    .map(function (a) { return document.querySelector(a.getAttribute("href")); })
-    .filter(Boolean);
+  /* ── Category filter (index page) ──────────────────────── */
+  var filters = Array.prototype.slice.call(
+    document.querySelectorAll("#filters .filter")
+  );
+  var cards = Array.prototype.slice.call(
+    document.querySelectorAll("#cards > li")
+  );
 
-  if (sections.length && "IntersectionObserver" in window) {
-    var visible = new Set();
+  if (filters.length && cards.length) {
+    filters.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var cat = button.dataset.cat;
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) visible.add(entry.target.id);
-        else visible.delete(entry.target.id);
+        filters.forEach(function (b) {
+          b.setAttribute("aria-pressed", String(b === button));
+        });
+
+        cards.forEach(function (card) {
+          card.hidden = cat !== "all" && card.dataset.cat !== cat;
+        });
       });
-
-      // Highlight the topmost section currently on screen.
-      var active = sections.filter(function (s) { return visible.has(s.id); })[0];
-      if (!active) return;
-
-      links.forEach(function (a) {
-        a.classList.toggle("is-active", a.getAttribute("href") === "#" + active.id);
-      });
-    }, { rootMargin: "-76px 0px -70% 0px", threshold: 0 });
-
-    sections.forEach(function (s) { observer.observe(s); });
+    });
   }
 
   /* ── Tonight checklist ─────────────────────────────────── */

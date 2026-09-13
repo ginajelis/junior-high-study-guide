@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>作業就是複習 | 國一學習節奏指南</title>
+<meta name="description" content="不是「作業」和「複習」兩件事。作業本身已經包含複習，只差一個確認自己懂不懂的小動作。晚上的六個執行步驟，以及一份可以勾選的今晚清單。">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../">
+      <span class="mark">📘</span>
+      <span class="name">國一學習節奏指南</span>
+    </a>
+    <div class="header-actions">
+      <button class="header-btn" id="themeToggle" type="button" aria-label="切換深淺色">◐</button>
+      <button class="header-btn" id="printBtn" type="button">列印</button>
+      <a class="header-btn" href="../">← 回首頁</a>
+    </div>
+  </div>
+</header>
+
+<div class="column" id="top">
+
+  <div class="crumbs">
+    <a class="crumb-home" href="../">首頁</a>
+    <span class="crumb-sep">›</span>
+    <span class="crumb-pill">作息安排</span>
+    <span class="crumb-num">第 2 篇</span>
+  </div>
+
+  <h1>作業就是複習</h1>
+
+  <p class="standfirst">不是「作業」和「複習」兩件事，而是作業已經包含複習，只差一個小動作。</p>
+
+  <article>
+      
+      
+
+      <p>能不能把作業當複習，取決於<strong>作業的性質</strong>：</p>
+      <ul>
+        <li><strong>需要思考的題目</strong>（數學習題、理化計算、英文造句）→ 這就是最好的複習，不必再來一輪。</li>
+        <li><strong>抄寫類</strong>（單字罰寫、習作填空、查資料、圈詞）→ 這是手工，不是複習，別算進去。</li>
+      </ul>
+
+      <div class="callout warn">
+        <div class="callout-title">缺的是哪一步</div>
+        <p>
+          寫作業可以照著例題做到全對，但不代表懂原理。
+          缺的是<strong>「確認自己到底懂不懂」</strong>——補這一步只要十分鐘，不用一小時。
+        </p>
+      </div>
+
+      <h3>晚上的執行順序</h3>
+      <ol class="steps">
+        <li>
+          <span class="step-title">翻一下今天的課本（2 分鐘）</span>
+          <span class="step-body">不是複習，是「開機」。這兩分鐘通常會讓作業寫更快，實際上是省時間。</span>
+        </li>
+        <li>
+          <span class="step-title">寫作業，卡住就跳過</span>
+          <span class="step-body">卡超過 <strong>5 分鐘</strong>就畫記號、跳過。卡死在一題上是晚上失控的頭號原因。</span>
+        </li>
+        <li>
+          <span class="step-title">回頭處理畫記號的地方</span>
+          <span class="step-body"><strong>這一步才是真正的複習</strong>，也是唯一不能省的。查課本、看十分鐘影片、或留到隔天問老師。</span>
+        </li>
+        <li>
+          <span class="step-title">沒有作業的科目，寫一句話</span>
+          <span class="step-body">每科 30 秒。見〈<a href="05-onesentence.html">一句話筆記</a>〉。</span>
+        </li>
+        <li>
+          <span class="step-title">明天的小考</span>
+          <span class="step-body">固定保留 20 分鐘，不可挪用。</span>
+        </li>
+        <li>
+          <span class="step-title">22:00 熄燈</span>
+          <span class="step-body">沒做完就停。</span>
+        </li>
+      </ol>
+
+      <h3>作業量爆掉的那天</h3>
+      <p>
+        <strong>先做需要思考的，抄寫類放最後。</strong>
+        因為抄寫可以隔天早自習或下課補，思考類不行——那需要腦力好的時候。
+      </p>
+
+      <div class="callout">
+        <div class="callout-title">容易被忽略的</div>
+        <p>
+          一天七、八節課，但有作業的通常只有兩三科。
+          <strong>真正會累積成災的，是那些不出作業的科目</strong>——理化、歷史、地理、公民。
+          它們平常沒感覺，段考前才發現全是洞。
+        </p>
+      </div>
+
+      <div class="checklist" id="tonight">
+        <div class="checklist-head">
+          <h3>今晚的執行順序</h3>
+          <button class="btn" type="button" id="resetChecks">重設</button>
+        </div>
+        <p class="checklist-sub">勾選狀態存在這台裝置上，每天重設一次。</p>
+        <ul>
+          <li><label><input type="checkbox" data-task="scan"><span class="task">全部掃一遍，分成 A／B／C 三堆<small>會寫的、卡住的、完全不懂的</small></span></label></li>
+          <li><label><input type="checkbox" data-task="warmup"><span class="task">翻今天的課本兩分鐘</span></label></li>
+          <li><label><input type="checkbox" data-task="a-pile"><span class="task">A 堆全部清掉<small>會寫的先做完</small></span></label></li>
+          <li><label><input type="checkbox" data-task="b-pile"><span class="task">B 堆補觀念，上限 30 分鐘<small>最多三個觀念</small></span></label></li>
+          <li><label><input type="checkbox" data-task="c-pile"><span class="task">C 堆標記起來，寫上「這裡不會」<small>明天問老師</small></span></label></li>
+          <li><label><input type="checkbox" data-task="notes"><span class="task">沒作業的科目各寫一句話</span></label></li>
+          <li><label><input type="checkbox" data-task="quiz"><span class="task">明天小考，20 分鐘</span></label></li>
+          <li><label><input type="checkbox" data-task="lights"><span class="task">22:00 熄燈</span></label></li>
+        </ul>
+      </div>
+    
+  </article>
+
+  <nav class="post-nav">
+    <a class="post-nav-link prev" href="01-rhythm.html"><span class="dir">← 上一篇</span><span class="t">週間作息安排</span></a>
+    <a class="post-nav-link next" href="03-stuck.html"><span class="dir">下一篇 →</span><span class="t">作業很多又不會寫</span></a>
+  </nav>
+
+  <footer class="site-footer">
+    <p>國一學習節奏指南 · 為國中一年級的適應期整理</p>
+    <p>可以直接列印（Cmd／Ctrl + P）貼在書桌前。</p>
+  </footer>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到頂端">↑</button>
+
+<script src="../assets/app.js"></script>
+</body>
+</html>

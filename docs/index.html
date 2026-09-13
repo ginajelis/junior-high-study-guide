@@ -12,11 +12,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
+<body class="index">
 
 <header class="site-header">
-  <div class="site-header-inner">
-    <a class="brand" href="#top">
+  <div class="site-header-inner" style="max-width:1180px;">
+    <a class="brand" href="./">
       <span class="mark">📘</span>
       <span class="name">國一學習節奏指南</span>
     </a>
@@ -27,599 +27,186 @@
   </div>
 </header>
 
-<div class="column" id="top">
+<div class="wide" id="top">
 
-  <div class="crumbs">
-    <span class="crumb-pill">學習節奏</span>
-    <span>國中一年級</span>
+  <div class="index-head">
+    <h1>跟不上的不是難度，是消化的速度</h1>
+    <p class="standfirst">
+      國小升國一的落差，通常不是內容變難，而是三件事同時發生：科目從四科變八科以上、
+      老師從「教到你會」變成「講完進度」、考試從「單元結束才考」變成「每天都考」。
+      所以真正缺的往往不是讀書時間，而是<strong>當天消化的機制</strong>。
+    </p>
+
+    <div class="index-stats">
+      <div><span class="v">8</span><span class="l">篇文章</span></div>
+      <div><span class="v">4</span><span class="l">核心篇章</span></div>
+      <div><span class="v">2026/9/13</span><span class="l">最新更新</span></div>
+    </div>
   </div>
 
-  <h1>跟不上的不是難度，是消化的速度</h1>
-
-  <p class="standfirst">
-    國小升國一的落差，通常不是內容變難，而是三件事同時發生：科目從四科變八科以上、
-    老師從「教到你會」變成「講完進度」、考試從「單元結束才考」變成「每天都考」。
-    所以真正缺的往往不是讀書時間，而是<strong>當天消化的機制</strong>。
-  </p>
-
-  <nav class="toc" aria-label="目錄">
-    <div class="toc-label">目錄</div>
-    <ol>
-      <li><a href="#rhythm"><span class="idx">01</span>週間作息安排<span class="star">★</span></a></li>
-      <li><a href="#homework"><span class="idx">02</span>作業就是複習<span class="star">★</span></a></li>
-      <li><a href="#stuck"><span class="idx">03</span>不會寫的時候</a></li>
-      <li><a href="#types"><span class="idx">04</span>債務型與累積型<span class="star">★</span></a></li>
-      <li><a href="#onesentence"><span class="idx">05</span>一句話筆記<span class="star">★</span></a></li>
-      <li><a href="#quiz"><span class="idx">06</span>頻繁小考的技巧</a></li>
-      <li><a href="#resources"><span class="idx">07</span>資源清單</a></li>
-      <li><a href="#signals"><span class="idx">08</span>給家長：訊號判讀</a></li>
-    </ol>
+  <nav class="filters" id="filters" aria-label="分類篩選">
+    <button class="filter" type="button" data-cat="all" aria-pressed="true">全部文章 <span class="n">8</span></button>
+    <button class="filter" type="button" data-cat="作息安排" aria-pressed="false">作息安排 <span class="n">2</span></button>
+    <button class="filter" type="button" data-cat="讀書方法" aria-pressed="false">讀書方法 <span class="n">4</span></button>
+    <button class="filter" type="button" data-cat="應試技巧" aria-pressed="false">應試技巧 <span class="n">1</span></button>
+    <button class="filter" type="button" data-cat="給家長" aria-pressed="false">給家長 <span class="n">1</span></button>
   </nav>
 
-  <main>
+  <ul class="cards" id="cards">
 
-    <!-- ── 1. 週間作息 ─────────────────────────────────── -->
-    <section id="rhythm">
-      <h2><span class="num">01</span>週間作息安排 <span class="key">核心</span></h2>
-      <p class="section-note">作業量每天不一樣，所以不要排「時段」，要排「順序」。</p>
-
-      <p>
-        固定時段的計畫表第一天就會破功，因為沒有人能預測今天有多少作業。
-        改成<strong>固定順序 ＋ 浮動長度</strong>，再設一個不能談判的熄燈時間。
-      </p>
-
-      <div class="table-wrap">
-        <table>
-          <caption class="sr-only">週間放學後的時間配置</caption>
-          <thead>
-            <tr><th>時間</th><th>內容</th><th>備註</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="when">17:00–18:00</td>
-              <td><strong>完全休息</strong></td>
-              <td>「動」的休息：洗澡、散步、打球。這一小時是保底的，<strong>不因作業多寡被犧牲</strong>。</td>
-            </tr>
-            <tr>
-              <td class="when">18:00–18:40</td>
-              <td>晚餐、聊天</td>
-              <td>這裡問那句「今天哪一句最難寫？」</td>
-            </tr>
-            <tr>
-              <td class="when">18:40–22:00</td>
-              <td><strong>照順序做，做到熄燈</strong></td>
-              <td>順序見下方。不切時段。</td>
-            </tr>
-            <tr>
-              <td class="when">22:00</td>
-              <td><strong>熄燈</strong></td>
-              <td>時間到就停。國一需要九小時睡眠。</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="callout">
-        <div class="callout-title">為什麼休閒要排在放學後</div>
-        <p>
-          那是唯一不受作業量影響的時段。晚上做完還剩多少是多少，但那一小時每天都有。
-        </p>
-        <p>
-          而且<strong>休閒不能因為表現不好被沒收</strong>。一旦娛樂變成獎懲工具，
-          孩子會學會拖時間——反正提早做完也沒好處。
-        </p>
-      </div>
-
-      <h3>熄燈為什麼重要</h3>
-      <p>
-        時間到就停，沒寫完的會照優先順序自然被砍掉最不重要的那些（通常是抄寫類）。
-        這比讓他寫到十一點半好很多——<strong>犧牲睡眠換來的完成度，隔天會加倍還回去</strong>。
-      </p>
-
-      <h3>週末</h3>
-      <ul>
-        <li><strong>週六上午兩小時「補洞」</strong>：把這週沒懂的補起來，不是預習。</li>
-        <li><strong>週日晚上三十分鐘</strong>：預覽下週。</li>
-        <li>其餘時間放掉。</li>
-      </ul>
-    </section>
-
-    <!-- ── 2. 作業即複習 ───────────────────────────────── -->
-    <section id="homework">
-      <h2><span class="num">02</span>作業就是複習 <span class="key">核心</span></h2>
-      <p class="section-note">不是「作業」和「複習」兩件事，而是作業已經包含複習，只差一個小動作。</p>
-
-      <p>能不能把作業當複習，取決於<strong>作業的性質</strong>：</p>
-      <ul>
-        <li><strong>需要思考的題目</strong>（數學習題、理化計算、英文造句）→ 這就是最好的複習，不必再來一輪。</li>
-        <li><strong>抄寫類</strong>（單字罰寫、習作填空、查資料、圈詞）→ 這是手工，不是複習，別算進去。</li>
-      </ul>
-
-      <div class="callout warn">
-        <div class="callout-title">缺的是哪一步</div>
-        <p>
-          寫作業可以照著例題做到全對，但不代表懂原理。
-          缺的是<strong>「確認自己到底懂不懂」</strong>——補這一步只要十分鐘，不用一小時。
-        </p>
-      </div>
-
-      <h3>晚上的執行順序</h3>
-      <ol class="steps">
-        <li>
-          <span class="step-title">翻一下今天的課本（2 分鐘）</span>
-          <span class="step-body">不是複習，是「開機」。這兩分鐘通常會讓作業寫更快，實際上是省時間。</span>
-        </li>
-        <li>
-          <span class="step-title">寫作業，卡住就跳過</span>
-          <span class="step-body">卡超過 <strong>5 分鐘</strong>就畫記號、跳過。卡死在一題上是晚上失控的頭號原因。</span>
-        </li>
-        <li>
-          <span class="step-title">回頭處理畫記號的地方</span>
-          <span class="step-body"><strong>這一步才是真正的複習</strong>，也是唯一不能省的。查課本、看十分鐘影片、或留到隔天問老師。</span>
-        </li>
-        <li>
-          <span class="step-title">沒有作業的科目，寫一句話</span>
-          <span class="step-body">每科 30 秒。見〈<a href="#onesentence">一句話筆記</a>〉。</span>
-        </li>
-        <li>
-          <span class="step-title">明天的小考</span>
-          <span class="step-body">固定保留 20 分鐘，不可挪用。</span>
-        </li>
-        <li>
-          <span class="step-title">22:00 熄燈</span>
-          <span class="step-body">沒做完就停。</span>
-        </li>
-      </ol>
-
-      <h3>作業量爆掉的那天</h3>
-      <p>
-        <strong>先做需要思考的，抄寫類放最後。</strong>
-        因為抄寫可以隔天早自習或下課補，思考類不行——那需要腦力好的時候。
-      </p>
-
-      <div class="callout">
-        <div class="callout-title">容易被忽略的</div>
-        <p>
-          一天七、八節課，但有作業的通常只有兩三科。
-          <strong>真正會累積成災的，是那些不出作業的科目</strong>——理化、歷史、地理、公民。
-          它們平常沒感覺，段考前才發現全是洞。
-        </p>
-      </div>
-
-      <div class="checklist" id="tonight">
-        <div class="checklist-head">
-          <h3>今晚的執行順序</h3>
-          <button class="btn" type="button" id="resetChecks">重設</button>
+    <li data-cat="作息安排">
+      <a class="card cat-作息安排" href="posts/01-rhythm.html">
+        <div class="card-cover">
+          <span class="tag">作息安排</span>
+          <span class="key-flag">核心</span>
+          <span class="big">01</span>
         </div>
-        <p class="checklist-sub">勾選狀態存在這台裝置上，每天重設一次。</p>
-        <ul>
-          <li><label><input type="checkbox" data-task="scan"><span class="task">全部掃一遍，分成 A／B／C 三堆<small>會寫的、卡住的、完全不懂的</small></span></label></li>
-          <li><label><input type="checkbox" data-task="warmup"><span class="task">翻今天的課本兩分鐘</span></label></li>
-          <li><label><input type="checkbox" data-task="a-pile"><span class="task">A 堆全部清掉<small>會寫的先做完</small></span></label></li>
-          <li><label><input type="checkbox" data-task="b-pile"><span class="task">B 堆補觀念，上限 30 分鐘<small>最多三個觀念</small></span></label></li>
-          <li><label><input type="checkbox" data-task="c-pile"><span class="task">C 堆標記起來，寫上「這裡不會」<small>明天問老師</small></span></label></li>
-          <li><label><input type="checkbox" data-task="notes"><span class="task">沒作業的科目各寫一句話</span></label></li>
-          <li><label><input type="checkbox" data-task="quiz"><span class="task">明天小考，20 分鐘</span></label></li>
-          <li><label><input type="checkbox" data-task="lights"><span class="task">22:00 熄燈</span></label></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ── 3. 不會寫 ───────────────────────────────────── -->
-    <section id="stuck">
-      <h2><span class="num">03</span>作業很多又不會寫</h2>
-      <p class="section-note">「量多」和「不會寫」要分開處理，否則查資源的時間會吃掉寫作業的時間。</p>
-
-      <h3>先分類，再開工</h3>
-      <p>
-        開工前花 <strong>3–5 分鐘把所有作業掃一遍</strong>，分三堆。
-        這五分鐘是整晚 CP 值最高的——大多數孩子是「從第一題開始寫，卡住就查」，
-        結果第一題查了二十五分鐘，後面九題沒碰到。
-      </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>分堆</th><th>是什麼</th><th>怎麼處理</th></tr></thead>
-          <tbody>
-            <tr><td><strong>A</strong></td><td>會寫的</td><td>先全部清掉。拿到進度，而且 A 堆寫完後 B 堆常會自己解開。</td></tr>
-            <tr><td><strong>B</strong></td><td>卡住，但看得懂題目在問什麼</td><td>用網路資源，<strong>上限 30 分鐘</strong>。</td></tr>
-            <tr><td><strong>C</strong></td><td>完全不知道在講什麼</td><td><strong>今天不解決。</strong>空著交，明天問老師。</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>B 堆的五條規則</h3>
-      <p>沒有規則的話，看影片會變成逃避寫作業的方式。</p>
-      <ol>
-        <li><strong>先自己想 3 分鐘 ＋ 翻課本</strong>，順序不能顛倒。沒想過就看答案等於沒學到。</li>
-        <li><strong>查「觀念」，不要查「這題的答案」。</strong>搜尋用觀念名稱（「一元一次方程式 移項」），不要貼題目原文。</li>
-        <li><strong>一個觀念最多 10 分鐘，設計時器。</strong>超過就丟進 C 堆。</li>
-        <li><strong>看完立刻關掉，自己重寫一次。</strong>邊看邊抄是最常見的假學習——當下覺得懂了，隔天完全不會。</li>
-        <li><strong>一天最多查三個觀念。</strong>超過代表今天的洞太大，不是查得完的。</li>
-      </ol>
-
-      <div class="callout warn">
-        <div class="callout-title">C 堆：空著比抄答案好</div>
-        <p>
-          空白交出去會讓人不安，但<strong>抄答案會讓老師以為他懂了</strong>，
-          那個洞就永遠不會被發現，一路累積到段考。
-        </p>
-        <p>空白其實是最有效的求救訊號，而且大多數老師看到會主動處理。</p>
-      </div>
-
-      <h3>為什麼補觀念要設硬上限</h3>
-      <p>
-        不會寫的題目是無底洞。沒有上限的話，一個晚上可以全部燒在三題數學上，
-        其他六科完全沒碰——<strong>這正是國一最典型的崩潰模式</strong>。
-      </p>
-    </section>
-
-    <!-- ── 4. 債務型與累積型 ───────────────────────────── -->
-    <section id="types">
-      <h2><span class="num">04</span>債務型與累積型 <span class="key">核心</span></h2>
-      <p class="section-note">分界線不是「文科 vs 理科」。問一個問題就能判斷。</p>
-
-      <div class="script">
-        這科今天不懂，<strong>會不會害到下個月</strong>？
-      </div>
-
-      <div class="type-grid">
-        <div class="type-card debt">
-          <h4>債務型</h4>
-          <p class="tagline">後面的內容以前面為前提。不懂 A 就無法理解 B。</p>
-          <dl>
-            <dt>科目</dt>
-            <dd>
-              <span class="pill debt">數學</span><span class="pill debt">理化</span>
-              <span class="pill debt">英文文法</span><span class="pill debt">圖表判讀</span>
-              <span class="pill debt">文言句型</span>
-            </dd>
-            <dt>為什麼叫債務</dt>
-            <dd>它有利息，而且是複利。一週的洞，兩週後要花三倍時間補。</dd>
-            <dt>失敗長相</dt>
-            <dd>卡在某一點，往後全垮。</dd>
-            <dt>時間投入</dt>
-            <dd>每天固定，晚上的主戰場。單次不長（30 分鐘上限）。</dd>
-            <dt>段考策略</dt>
-            <dd>平常顧好的話，只要做題目找洞，不必重讀。</dd>
-            <dt>鐵則</dt>
-            <dd><strong>當天清零，絕對不能欠債。</strong></dd>
-          </dl>
+        <div class="card-body">
+          <div class="card-meta">第 01 篇 · 約 5 分鐘</div>
+          <h2>週間作息安排</h2>
+          <p>
+            作業量每天不一樣，固定時段的計畫表第一天就會破功。改成固定順序加上不能談判的
+            熄燈時間，並且把休閒排在放學後——那是唯一不受作業量影響的時段。
+          </p>
+          <span class="more">閱讀全文 →</span>
         </div>
+      </a>
+    </li>
 
-        <div class="type-card accum">
-          <h4>累積型</h4>
-          <p class="tagline">內容之間是並列的，不是堆疊的。第三課不懂，第四課照樣能懂。</p>
-          <dl>
-            <dt>科目</dt>
-            <dd>
-              <span class="pill accum">國文</span><span class="pill accum">歷史</span>
-              <span class="pill accum">公民</span><span class="pill accum">區域地理</span>
-              <span class="pill accum">英文單字</span>
-            </dd>
-            <dt>為什麼叫累積</dt>
-            <dd>不產生利息，但<strong>會蒸發</strong>。敵人不是「不懂」，是「遺忘」。</dd>
-            <dt>失敗長相</dt>
-            <dd>讀過了但沒印象；段考前發現有兩個月的量。</dd>
-            <dt>時間投入</dt>
-            <dd>零碎時間——通勤、下課、睡前。<strong>不佔用晚上大塊時間。</strong></dd>
-            <dt>段考策略</dt>
-            <dd>這才是真正要讀的時候，要留 1–2 週。</dd>
-            <dt>鐵則</dt>
-            <dd><strong>可以欠，但不能斷。</strong></dd>
-          </dl>
+    <li data-cat="作息安排">
+      <a class="card cat-作息安排" href="posts/02-homework.html">
+        <div class="card-cover">
+          <span class="tag">作息安排</span>
+          <span class="key-flag">核心</span>
+          <span class="big">02</span>
         </div>
-      </div>
+        <div class="card-body">
+          <div class="card-meta">第 02 篇 · 約 6 分鐘</div>
+          <h2>作業就是複習</h2>
+          <p>
+            不是「作業」和「複習」兩件事。作業本身已經包含複習，只差一個確認自己懂不懂的
+            小動作。晚上的六個執行步驟，以及一份可以勾選的今晚清單。
+          </p>
+          <span class="more">閱讀全文 →</span>
+        </div>
+      </a>
+    </li>
 
-      <h3>債務已經在累積的訊號</h3>
-      <ul>
-        <li><strong>「我上課聽得懂，但回家不會寫」</strong>——最經典。意思是他能跟著老師的思路走，但無法自己產生思路。</li>
-        <li>一模一樣的題會做，數字換掉就不會。</li>
-        <li>訂正時看得懂答案，但講不出「為什麼要這樣做」。</li>
-        <li>寫作業時間越來越長，但題目並沒有變多。</li>
-      </ul>
+    <li data-cat="讀書方法">
+      <a class="card cat-讀書方法" href="posts/03-stuck.html">
+        <div class="card-cover">
+          <span class="tag">讀書方法</span>
+          <span class="big">03</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">第 03 篇 · 約 5 分鐘</div>
+          <h2>作業很多又不會寫</h2>
+          <p>
+            「量多」和「不會寫」要分開處理，否則查資源的時間會吃掉寫作業的時間。
+            開工前先把作業分成三堆，並給補觀念一個三十分鐘的硬上限。
+          </p>
+          <span class="more">閱讀全文 →</span>
+        </div>
+      </a>
+    </li>
 
-      <h3>累積型出問題的訊號</h3>
-      <ul>
-        <li><strong>「我有讀啊，但考出來就忘了」</strong></li>
-        <li>讀的時候很順，考的時候提取不出來——這是<strong>重複閱讀造成的熟悉感錯覺</strong>，很危險。</li>
-        <li>筆記做得很漂亮，但沒印象。</li>
-      </ul>
+    <li data-cat="讀書方法">
+      <a class="card cat-讀書方法" href="posts/04-types.html">
+        <div class="card-cover">
+          <span class="tag">讀書方法</span>
+          <span class="key-flag">核心</span>
+          <span class="big">04</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">第 04 篇 · 約 8 分鐘</div>
+          <h2>債務型與累積型</h2>
+          <p>
+            分界線不是「文科 vs 理科」。問一句「這科今天不懂，會不會害到下個月」就能分出
+            債務型和累積型——兩者的處理方式、時間投入和段考策略完全不同。
+          </p>
+          <span class="more">閱讀全文 →</span>
+        </div>
+      </a>
+    </li>
 
-      <h3>債務型的處理原則</h3>
-      <ol>
-        <li><strong>當天清零，不能跨日。</strong></li>
-        <li><strong>往回補，不是往前追。</strong>今天二元一次不會，往往是因為一元一次沒懂。硬補今天的沒用，要往回找到真正斷掉的那一層。</li>
-        <li><strong>補的單位是「觀念」不是「章節」。</strong>通常就是某一個步驟。</li>
-        <li>沒有「先背起來以後再懂」這回事。</li>
-      </ol>
+    <li data-cat="讀書方法">
+      <a class="card cat-讀書方法" href="posts/05-onesentence.html">
+        <div class="card-cover">
+          <span class="tag">讀書方法</span>
+          <span class="key-flag">核心</span>
+          <span class="big">05</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">第 05 篇 · 約 6 分鐘</div>
+          <h2>一句話筆記</h2>
+          <p>
+            這不是在做筆記，是在檢查「我剛剛有沒有真的在聽」。寫不出來的那一節就是今天的洞。
+            三階段教法、句型模板，以及家長該怎麼「不檢查」。
+          </p>
+          <span class="more">閱讀全文 →</span>
+        </div>
+      </a>
+    </li>
 
-      <h3>累積型的處理原則</h3>
-      <ol>
-        <li><strong>頻率 &gt; 時長。</strong>每天十分鐘勝過週末兩小時——因為對抗的是遺忘曲線。</li>
-        <li><strong>主動提取 &gt; 重複閱讀。</strong>蓋起來自己講一次，勝過再讀三遍。</li>
-        <li><strong>要結構，不要清單。</strong>孤立的事實記不住，有因果關係的記得住。</li>
-      </ol>
+    <li data-cat="應試技巧">
+      <a class="card cat-應試技巧" href="posts/06-quiz.html">
+        <div class="card-cover">
+          <span class="tag">應試技巧</span>
+          <span class="big">06</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">第 06 篇 · 約 3 分鐘</div>
+          <h2>頻繁小考的技巧</h2>
+          <p>
+            小考的本質是記憶的即時提取，策略跟段考完全不同。只讀範圍、主動回想、
+            錯題本極簡化，還有 CP 值最高的下課十分鐘。
+          </p>
+          <span class="more">閱讀全文 →</span>
+        </div>
+      </a>
+    </li>
 
-      <h3>分不清楚的時候</h3>
-      <div class="script">
-        看它<strong>有沒有「方法」要學會</strong>。<br>
-        有方法 → 債務型。只要記得 → 累積型。
-      </div>
+    <li data-cat="讀書方法">
+      <a class="card cat-讀書方法" href="posts/07-resources.html">
+        <div class="card-cover">
+          <span class="tag">讀書方法</span>
+          <span class="big">07</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">第 07 篇 · 約 4 分鐘</div>
+          <h2>資源清單</h2>
+          <p>
+            用法比選擇更重要：當天卡住、當天晚上看十分鐘那一個觀念就好。均一、學習吧、
+            PaGamO 的分工，以及為什麼不建議拍照解題 App。
+          </p>
+          <span class="more">閱讀全文 →</span>
+        </div>
+      </a>
+    </li>
 
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>科目</th><th>債務型的部分</th><th>累積型的部分</th></tr></thead>
-          <tbody>
-            <tr><td>生物</td><td>遺傳計算</td><td>細胞、分類</td></tr>
-            <tr><td>地理</td><td>氣候圖、地圖判讀</td><td>區域地理</td></tr>
-            <tr><td>國文</td><td>文言虛詞、句型</td><td>課文、注釋、修辭</td></tr>
-            <tr><td>英文</td><td>文法</td><td>單字、片語</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <li data-cat="給家長">
+      <a class="card cat-給家長" href="posts/08-signals.html">
+        <div class="card-cover">
+          <span class="tag">給家長</span>
+          <span class="big">08</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">第 08 篇 · 約 4 分鐘</div>
+          <h2>給家長：訊號判讀</h2>
+          <p>
+            什麼時候該調整方法，什麼時候該求助。C 堆連續一週超過三題代表什麼、
+            每天寫到十一點代表什麼，以及三個容易搞錯的提醒。
+          </p>
+          <span class="more">閱讀全文 →</span>
+        </div>
+      </a>
+    </li>
 
-      <div class="callout warn">
-        <div class="callout-title">英文要拆成兩半</div>
-        <p>
-          文法的行為跟數學一模一樣——有規則、有對錯、前後強依賴。
-          <strong>國一的文法洞最會利滾利</strong>：be 動詞和一般動詞沒分清楚，
-          會一路壞到國三，而且中間每一課都在用。
-        </p>
-        <p>單字則是純累積：<strong>只背考試範圍</strong>，分兩批（睡前一次、早上一次）。</p>
-      </div>
-
-      <h3>時間衝突的時候</h3>
-      <p>
-        <strong>債務型永遠優先。</strong>
-        因為累積型的損失是線性的，債務型是複利的。
-        歷史晚一週讀沒事，數學欠一天就開始滾。
-      </p>
-
-      <div class="callout">
-        <div class="callout-title">兩個科目的補充</div>
-        <p>
-          <strong>國文的網路資源幫助有限</strong>——考點大多來自老師課堂上的補充，不在課本也不在網路上。
-          最該做的是把課堂筆記補齊，漏抄的隔天跟同學借。
-        </p>
-        <p>
-          <strong>社會科是理解科偽裝成背科。</strong>
-          歷史抓時間軸和因果、地理抓「為什麼這裡會這樣」、公民抓概念之間的關係。
-          自己畫時間軸或關係圖比抄筆記有效——畫不出來的地方就是沒懂的地方。
-        </p>
-      </div>
-    </section>
-
-    <!-- ── 5. 一句話筆記 ───────────────────────────────── -->
-    <section id="onesentence">
-      <h2><span class="num">05</span>一句話筆記 <span class="key">核心</span></h2>
-      <p class="section-note">這不是在做筆記，是在檢查「我剛剛有沒有真的在聽」。</p>
-
-      <p>
-        <strong>寫不出來的那一節，就是今天的洞</strong>——這個發現本身就是全部的價值。
-        這句話要先對孩子講清楚，否則他會以為又多了一項作業。
-      </p>
-
-      <h3>規格（極簡，否則一定放棄）</h3>
-      <ul>
-        <li>一節課一句話，<strong>20 字以內</strong></li>
-        <li>寫在<strong>課本那一頁的空白處</strong>——不用另外帶本子，減少摩擦</li>
-        <li>下課後 30 秒內寫，趁還記得</li>
-      </ul>
-
-      <h3>分三階段教，不要一次到位</h3>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>階段</th><th>要求</th><th>範例</th></tr></thead>
-          <tbody>
-            <tr>
-              <td class="when">第 1 週</td>
-              <td>只寫「今天在講什麼」<br><small>抄黑板標題也可以</small></td>
-              <td>「今天教移項」</td>
-            </tr>
-            <tr>
-              <td class="when">第 2–3 週</td>
-              <td>加上規則</td>
-              <td>「移項要變號」</td>
-            </tr>
-            <tr>
-              <td class="when">第 4 週後</td>
-              <td>自己的話 ＋ 卡住的地方</td>
-              <td>「移項就是搬過去要變號，但兩邊同乘的時候我還是會搞混」</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p>
-        <strong>後半句是黃金</strong>——那是自我診斷，也是隔天該問老師的問題。
-      </p>
-      <p>
-        這個漸進很重要。一開始就要求「用自己的話寫出理解」，國一的孩子做不到，會直接放棄。
-      </p>
-
-      <h3>三個句型模板</h3>
-      <p>讓他從這三個挑一個填空，比面對空白容易一百倍。</p>
-      <div class="script">
-        1. 今天在講 ＿＿＿，重點是 ＿＿＿。<br>
-        2. ＿＿＿ 的時候要 ＿＿＿，因為 ＿＿＿。<br>
-        3. 我懂了 ＿＿＿，但還是不懂 ＿＿＿。
-      </div>
-      <p>第三個最有價值，但等習慣建立後再引入。</p>
-
-      <h3>家長怎麼「檢查」——這步決定生死</h3>
-      <div class="callout warn">
-        <div class="callout-title">不要做的</div>
-        <p>不要檢查有沒有寫、寫幾句、寫得好不好。<strong>一旦變成作業，這件事就死了。</strong></p>
-      </div>
-      <p>改成晚餐時問一句：</p>
-      <div class="script">
-        今天<strong>哪一句最難寫</strong>？
-      </div>
-      <p>
-        這個問題會直接帶出他最卡的科目，而且不像在查勤。
-        或者問「今天有沒有哪一節你寫不出來？」——寫不出來的那一節，就是今晚該優先處理的。
-      </p>
-
-      <h3>常見失敗</h3>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>症狀</th><th>原因</th><th>修正</th></tr></thead>
-          <tbody>
-            <tr><td>寫得太長</td><td>想寫好</td><td>硬性規定 20 字，超過不算</td></tr>
-            <tr><td>每句都抄標題</td><td>不知道怎麼開始</td><td>給句型模板</td></tr>
-            <tr><td>兩天就停</td><td>沒有立即回饋</td><td>前兩週<strong>只做 1–2 科</strong></td></tr>
-            <tr><td>變成交差了事</td><td>家長在檢查</td><td>改問「哪一句最難寫」</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>怎麼起步</h3>
-      <p>
-        <strong>先從一科開始</strong>——建議數學，或他最挫折的那一科。
-        做滿一週再加第二科，一個月後才擴到全部。一開始就八科，幾乎必定失敗。
-      </p>
-      <p>可以這樣跟孩子講：</p>
-      <div class="script">
-        這 30 秒是在幫你<strong>存檔</strong>。<br>
-        沒存檔的話，晚上寫作業等於從頭再讀一次。
-      </div>
-    </section>
-
-    <!-- ── 6. 小考 ─────────────────────────────────────── -->
-    <section id="quiz">
-      <h2><span class="num">06</span>頻繁小考的技巧</h2>
-      <p class="section-note">小考的本質是記憶的即時提取，策略跟段考完全不同。</p>
-
-      <ol>
-        <li><strong>只讀考試範圍，不要多讀。</strong>範圍小是優勢，不是壓力。</li>
-        <li><strong>主動回想 &gt; 重複閱讀。</strong>蓋住答案默寫一次，勝過讀三遍。這是差距最大的一點。</li>
-        <li><strong>英文單字分兩批</strong>：睡前一次、早上到校再一次。間隔重複的效果差很多。</li>
-        <li><strong>考前五分鐘只看「剛剛錯過的」</strong>，不要從頭翻。</li>
-        <li><strong>錯題本要極簡</strong>：只記「題目 ＋ 錯在哪一步」，一天不超過三題。做得太完整一定會放棄。</li>
-        <li><strong>考壞不檢討分數，只檢討「哪一題不會」。</strong>頻繁小考的唯一價值是找洞。</li>
-      </ol>
-
-      <div class="callout">
-        <div class="callout-title">黃金十分鐘</div>
-        <p>
-          下課或午休花十分鐘，翻開剛上完的那一頁，用自己的話寫一句。
-          <strong>這十分鐘能省掉晚上一小時。</strong>
-        </p>
-      </div>
-    </section>
-
-    <!-- ── 7. 資源 ─────────────────────────────────────── -->
-    <section id="resources">
-      <h2><span class="num">07</span>資源清單</h2>
-      <p class="section-note">用法比選擇更重要：當天卡住、當天晚上看十分鐘那一個觀念就好。</p>
-
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>資源</th><th>適合</th><th>怎麼用</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><a href="https://www.junyiacademy.org/" target="_blank" rel="noopener">均一教育平台</a></td>
-              <td>數學、理化</td>
-              <td>照台灣課綱分章節，可以直接跳到某個小觀念，不必從頭看。<strong>B 堆最適合。</strong></td>
-            </tr>
-            <tr>
-              <td><a href="https://www.learnmode.net/" target="_blank" rel="noopener">LearnMode 學習吧</a></td>
-              <td>國中各科</td>
-              <td>含教育部資源，社會科也有。</td>
-            </tr>
-            <tr>
-              <td><a href="https://www.pagamo.org/" target="_blank" rel="noopener">PaGamO</a></td>
-              <td>練習題</td>
-              <td>遊戲化，適合抗拒讀書的孩子。</td>
-            </tr>
-            <tr>
-              <td>YouTube</td>
-              <td>單一觀念</td>
-              <td>搜尋加上「國中」或「國一」，否則會跳出高中解法，只會更混亂。</td>
-            </tr>
-            <tr>
-              <td>Quizlet／紙卡</td>
-              <td>英文單字</td>
-              <td>間隔重複。只放考試範圍。</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="callout warn">
-        <div class="callout-title">不建議的</div>
-        <p>
-          <strong>拍照解題 App</strong>（Photomath 那類）給答案不給理解，
-          而且會把「不會」藏起來，段考一次爆。
-          真要用就規定：<strong>只能對答案，不能產生答案。</strong>
-        </p>
-        <p>
-          <strong>AI 可以用</strong>，但要教他問「為什麼這一步要這樣做」，
-          而不是「幫我算這題」。問法決定了是學習還是代工。
-        </p>
-      </div>
-    </section>
-
-    <!-- ── 8. 訊號 ─────────────────────────────────────── -->
-    <section id="signals">
-      <h2><span class="num">08</span>給家長：訊號判讀</h2>
-      <p class="section-note">什麼時候該調整方法，什麼時候該求助。</p>
-
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>觀察到的</th><th>代表什麼</th><th>該做的</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>C 堆連續一週超過三題</td>
-              <td>不是方法問題，是<strong>進度真的跟不上</strong></td>
-              <td>找導師或該科老師談，問清楚「他缺的是哪一段基礎」。只針對那一科短期補救。</td>
-            </tr>
-            <tr>
-              <td>每天寫到 23:00 還寫不完</td>
-              <td>作業量或方法的問題，<strong>不是努力不夠</strong></td>
-              <td>跟導師談，而不是再加時間。</td>
-            </tr>
-            <tr>
-              <td>段考前需要「重學」債務型科目</td>
-              <td>平常欠債了</td>
-              <td>回到「當天清零」。</td>
-            </tr>
-            <tr>
-              <td>累積型科目平常看起來沒在讀</td>
-              <td><strong>正常</strong></td>
-              <td>不用焦慮。只要每天留下一點痕跡就好。</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>三個提醒</h3>
-      <ul>
-        <li>
-          <strong>前三次段考掉分是常態。</strong>
-          那反映的是適應速度，不是能力。
-        </li>
-        <li>
-          <strong>挫折感比分數重要。</strong>
-          孩子說「我不會」時，回「這科你哪裡最卡？」會比「你有沒有認真聽」得到更多資訊。
-        </li>
-        <li>
-          <strong>不要因此全面補習。</strong>
-          那會讓晚上時間更少，讓整套機制垮掉，通常是惡化而不是改善。
-        </li>
-      </ul>
-
-      <div class="script">
-        孩子說「我不會」的時候，先問<strong>「這科你哪裡最卡？」</strong>
-      </div>
-    </section>
-
-  </main>
+  </ul>
 
   <footer class="site-footer">
     <p>國一學習節奏指南 · 為國中一年級的適應期整理</p>
-    <p>可以直接列印（Cmd／Ctrl + P）貼在書桌前。</p>
+    <p>每一篇都可以單獨列印（Cmd／Ctrl + P）貼在書桌前。</p>
   </footer>
 </div>
 

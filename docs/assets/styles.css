@@ -275,56 +275,6 @@ h3 {
   top: -.15em;
 }
 
-/* ── Table of contents card ──────────────────────────────── */
-.toc {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--card-sunken);
-  padding: 1.15rem 1.2rem 1.25rem;
-  margin: 0 0 3rem;
-}
-
-.toc-label {
-  font-size: .78rem;
-  letter-spacing: .1em;
-  color: var(--muted);
-  font-weight: 700;
-  margin-bottom: .9rem;
-}
-
-.toc ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
-  gap: .55rem;
-}
-
-.toc li { margin: 0; }
-
-.toc a {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .55rem .9rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--card);
-  color: var(--text);
-  text-decoration: none;
-  font-size: .92rem;
-  line-height: 1.6;
-  transition: border-color .15s, color .15s;
-}
-
-.toc a:hover { border-color: var(--accent); color: var(--accent); }
-.toc a.is-active { border-color: var(--accent); color: var(--accent); font-weight: 500; }
-
-.toc .idx { font-family: var(--mono); font-size: .78rem; color: var(--faint); flex: none; }
-.toc a.is-active .idx { color: var(--accent); }
-.toc .star { margin-left: auto; color: var(--accent); font-size: .8rem; flex: none; }
-
 /* ── Callouts ────────────────────────────────────────────── */
 .callout {
   background: var(--card-sunken);
@@ -606,7 +556,6 @@ td small { color: var(--faint); }
 @media (max-width: 48rem) {
   body { font-size: 16.5px; }
   :root { --gap: 32px; }
-  .toc ol { grid-template-columns: 1fr; }
   .column { padding: 24px 1rem 56px; }
 }
 
@@ -624,7 +573,7 @@ td small { color: var(--faint); }
     --gap: 14px;
   }
   body { background: #fff; font-size: 10.5pt; line-height: 1.75; }
-  .site-header, .toc, .to-top, .btn, .header-actions { display: none !important; }
+  .site-header, .to-top, .btn, .header-actions { display: none !important; }
   .column { max-width: none; padding: 0; min-height: 0; }
   section { margin-bottom: 1.6rem; page-break-inside: avoid; }
   h1 { font-size: 1.5rem; }
@@ -635,4 +584,299 @@ td small { color: var(--faint); }
   .type-card { page-break-inside: avoid; margin-bottom: .8rem; }
   .callout, .script, .checklist, .table-wrap, .steps li { page-break-inside: avoid; }
   a { color: #000; text-decoration: none; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   Index page — a card grid of articles, one card per chapter
+   ══════════════════════════════════════════════════════════ */
+
+body.index { background: var(--index-bg); }
+
+:root { --index-bg: #f4f2ef; --card-shadow: 0 1px 2px rgba(31, 29, 27, .05); }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --index-bg: #131110; --card-shadow: 0 1px 3px rgba(0, 0, 0, .4); }
+}
+:root[data-theme="dark"] { --index-bg: #131110; --card-shadow: 0 1px 3px rgba(0, 0, 0, .4); }
+
+.wide {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+/* ── Index masthead ──────────────────────────────────────── */
+.index-head { text-align: center; margin-bottom: 2.5rem; }
+
+.index-head h1 {
+  margin: 0 auto .9rem;
+  max-width: 22em;
+}
+
+.index-head .standfirst {
+  border: 0;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 40em;
+  text-align: left;
+  color: var(--muted);
+  font-size: .98rem;
+}
+
+.index-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.75rem;
+  flex-wrap: wrap;
+  margin: 2.25rem 0 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.index-stats div { text-align: center; }
+
+.index-stats .v {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.3;
+}
+
+.index-stats .l { font-size: .82rem; color: var(--muted); }
+
+/* ── Category filter ─────────────────────────────────────── */
+.filters {
+  background: var(--card-sunken);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  justify-content: center;
+}
+
+.filter {
+  font: inherit;
+  font-family: var(--sans);
+  font-size: .95rem;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .45rem 1.1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .55rem;
+  transition: color .15s, border-color .15s;
+}
+
+.filter .n { font-size: .84rem; color: var(--faint); }
+.filter:hover { border-color: var(--accent); color: var(--accent); }
+
+.filter[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.filter[aria-pressed="true"] .n { color: var(--accent); }
+
+/* ── Card grid ───────────────────────────────────────────── */
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1.5rem;
+}
+
+.cards li { margin: 0; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--card-shadow);
+  transition: border-color .18s, transform .18s, box-shadow .18s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(31, 29, 27, .09);
+}
+
+/* Cover: no stock photography, just the chapter number on its own field */
+.card-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background: var(--tint);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.card-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg, transparent 0 14px, rgba(255, 255, 255, .28) 14px 15px);
+  opacity: .55;
+}
+
+.card-cover .big {
+  font-family: var(--serif);
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--hue);
+  opacity: .92;
+  position: relative;
+  z-index: 1;
+}
+
+.card-cover .tag {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  z-index: 2;
+  background: var(--hue);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 500;
+  line-height: 1.9;
+  padding: .05rem .8rem;
+  border-radius: 999px;
+}
+
+.card-cover .key-flag {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  z-index: 2;
+  background: rgba(255, 255, 255, .92);
+  color: var(--hue);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  line-height: 1.9;
+  padding: .05rem .65rem;
+  border-radius: 999px;
+}
+
+.card-body { padding: 1.1rem 1.25rem 1.35rem; display: flex; flex-direction: column; flex: 1; }
+
+.card-meta {
+  font-size: .82rem;
+  color: var(--faint);
+  font-family: var(--mono);
+  margin-bottom: .5rem;
+}
+
+.card h2 {
+  font-family: var(--serif);
+  font-size: 1.22rem;
+  line-height: 1.6;
+  font-weight: 700;
+  color: var(--heading);
+  margin: 0 0 .6rem;
+  display: block;
+  letter-spacing: .5px;
+}
+
+.card p {
+  font-size: .93rem;
+  line-height: 1.9;
+  color: var(--muted);
+  margin: 0 0 1.15rem;
+}
+
+.card .more {
+  margin-top: auto;
+  color: var(--accent);
+  font-size: .92rem;
+  font-weight: 500;
+}
+
+.card:hover .more { color: var(--accent-hover); }
+
+/* Category hues */
+.cat-作息安排 { --hue: #c8602a; --tint: #f9ece2; }
+.cat-讀書方法 { --hue: #2f6f62; --tint: #e3efec; }
+.cat-應試技巧 { --hue: #3f5a99; --tint: #e5eaf5; }
+.cat-給家長  { --hue: #8a4a72; --tint: #f3e7ef; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .cat-作息安排 { --hue: #e08a52; --tint: #2c1e16; }
+  :root:not([data-theme="light"]) .cat-讀書方法 { --hue: #6fbdab; --tint: #162b26; }
+  :root:not([data-theme="light"]) .cat-應試技巧 { --hue: #87a3dd; --tint: #1a2033; }
+  :root:not([data-theme="light"]) .cat-給家長  { --hue: #c98bb4; --tint: #2b1a26; }
+}
+
+:root[data-theme="dark"] .cat-作息安排 { --hue: #e08a52; --tint: #2c1e16; }
+:root[data-theme="dark"] .cat-讀書方法 { --hue: #6fbdab; --tint: #162b26; }
+:root[data-theme="dark"] .cat-應試技巧 { --hue: #87a3dd; --tint: #1a2033; }
+:root[data-theme="dark"] .cat-給家長  { --hue: #c98bb4; --tint: #2b1a26; }
+
+.cards li[hidden] { display: none; }
+
+/* ── Post breadcrumbs & prev/next ────────────────────────── */
+.crumb-home { color: var(--muted); text-decoration: none; }
+.crumb-home:hover { color: var(--accent); }
+.crumb-sep { color: var(--faint); }
+.crumb-num { color: var(--muted); font-size: .85rem; }
+
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.post-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .9rem 1.1rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color .15s, color .15s;
+}
+
+.post-nav-link:hover { border-color: var(--accent); color: var(--accent); }
+.post-nav-link.is-empty { border: 0; }
+.post-nav-link .dir { font-size: .8rem; color: var(--faint); line-height: 1.8; }
+.post-nav-link .t { font-family: var(--serif); font-weight: 700; line-height: 1.7; }
+.post-nav-link.next { text-align: right; }
+
+@media (max-width: 40rem) {
+  .post-nav { grid-template-columns: 1fr; }
+  .post-nav-link.is-empty { display: none; }
+  .index-stats { gap: 1.75rem; }
+  .wide { padding: 2rem 1rem 3rem; }
+}
+
+@media print {
+  body.index { background: #fff; }
+  .filters, .post-nav, .index-stats { display: none !important; }
+  .cards { display: block; }
+  .card { page-break-inside: avoid; margin-bottom: .6rem; box-shadow: none; }
+  .card-cover { display: none; }
 }

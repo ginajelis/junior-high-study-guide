@@ -3,7 +3,8 @@
 給國中一年級適應期的一份參考：週間作息安排、作業與複習的順序、
 債務型與累積型科目的區辨，以及「一句話筆記」的用法。
 
-八篇短文，首頁是卡片式索引，可依分類篩選。靜態網站，沒有建置步驟。
+九篇短文，首頁是卡片式索引，可依分類篩選。第 9 篇是給學生玩的互動闖關。
+靜態網站，沒有建置步驟。
 
 ## 線上版本
 
@@ -28,8 +29,10 @@ docs/
     06-quiz.html               # 頻繁小考的技巧
     07-resources.html          # 資源清單
     08-signals.html            # 給家長：訊號判讀
+    09-quest.html              # 給國一生的自我判讀（互動）
   assets/styles.css            # 設計 token、深淺色、列印樣式
-  assets/app.js                # 深淺色、分類篩選、今晚清單、回頂端
+  assets/app.js                # 分類篩選、今晚清單、列印、回頂端
+  assets/quest.js              # 第 9 篇的闖關邏輯與題目資料
 wrangler.jsonc                 # Cloudflare Workers 靜態資產設定
 .github/workflows/             # 備用的 Actions 部署路線
 ```
@@ -47,6 +50,16 @@ Noto Serif TC 標題、寬鬆的段落節奏。首頁是卡片三欄網格，分
 
 新增一篇文章時，複製任一個 `docs/posts/*.html` 當範本，再到 `docs/index.html`
 補一張卡片（`data-cat` 要對應篩選列的分類），並更新篩選列的篇數。
+
+## 第 9 篇的闖關
+
+七道關卡對應第 1–7 篇，每一關是一個晚上真的會遇到的決定：選項本身都合理，
+但只有一個符合前面幾篇的原則。選錯會說明原因並可以重選——選錯才是重點。
+
+題目資料全部在 `docs/assets/quest.js` 最上方的 `STAGES` 陣列裡，
+每一關有 `scene`（情境）、`options`（`ok` 標記正解、`say` 是回饋）、
+以及 `link`（對應文章）。要改題目直接改那個陣列就好。
+
 
 ## 本機預覽
 
@@ -80,6 +93,7 @@ CC0 不要求標示出處，但每篇文章仍附上來源連結。
 | 頻繁小考的技巧 | [Pencil test paper](https://www.rawpixel.com/image/3338154/free-photo-image-exam-cc0-creative-commons) | — | Rawpixel | CC0 |
 | 資源清單 | [Laptop Apple](https://stocksnap.io/photo/laptop-apple-DMY4V8V5W9) | Mateusz Dach | StockSnap | CC0 |
 | 給家長：訊號判讀 | [Mother Daughter](https://stocksnap.io/photo/mother-daughter-FHQOAULEKZ) | Family First | StockSnap | CC0 |
+| 給國一生的自我判讀 | [木製迷宮遊戲板](https://www.rawpixel.com/image/5944928/free-public-domain-cc0-photo) | — | Rawpixel | CC0 |
 
 ## 列印
 

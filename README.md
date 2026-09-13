@@ -38,9 +38,12 @@ wrangler.jsonc                 # Cloudflare Workers 靜態資產設定
 
 ## 排版
 
-版面語言參考 [blog.ichentsai.tw](https://blog.ichentsai.tw/)：深色外框配單欄白底內容
-（784px）、Noto Serif TC 標題搭配磚橘色 H2、寬鬆的段落節奏。首頁則是白卡片的
-三欄網格，分類以顏色區分。
+版面結構參考 [blog.ichentsai.tw](https://blog.ichentsai.tw/)：單欄閱讀區（784px）、
+Noto Serif TC 標題、寬鬆的段落節奏。首頁是卡片三欄網格，分類以顏色區分。
+
+配色採**莫蘭迪色系**——低飽和、帶灰調，暖灰米色底配柔和的陶土／灰綠／灰藍／灰粉紫。
+全站只有淺色一種主題，沒有深色模式。每個色相有兩階：`--x` 用於面／線，
+`--x-deep` 用於需要對比的文字。
 
 新增一篇文章時，複製任一個 `docs/posts/*.html` 當範本，再到 `docs/index.html`
 補一張卡片（`data-cat` 要對應篩選列的分類），並更新篩選列的篇數。

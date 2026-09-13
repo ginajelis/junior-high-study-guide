@@ -1,29 +1,8 @@
 (function () {
   "use strict";
 
-  /* ── Theme toggle ──────────────────────────────────────── */
-  var THEME_KEY = "study-guide-theme";
-  var root = document.documentElement;
-  var toggle = document.getElementById("themeToggle");
-
   function storage(fn, fallback) {
     try { return fn(); } catch (e) { return fallback; }
-  }
-
-  var saved = storage(function () { return localStorage.getItem(THEME_KEY); }, null);
-  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
-
-  if (toggle) {
-    toggle.addEventListener("click", function () {
-      var current = root.getAttribute("data-theme");
-      if (!current) {
-        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        current = prefersDark ? "dark" : "light";
-      }
-      var next = current === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      storage(function () { return localStorage.setItem(THEME_KEY, next); });
-    });
   }
 
   /* ── Print ─────────────────────────────────────────────── */

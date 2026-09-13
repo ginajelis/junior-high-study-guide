@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 563" role="img" aria-label="平板上的教學影片、亮起的燈泡和沙漏">
+<defs>
+  <pattern id="tone" width="14" height="14" patternUnits="userSpaceOnUse">
+    <circle cx="4" cy="4" r="2.6" fill="#37322C" opacity=".20"/>
+    <circle cx="11" cy="11" r="2.6" fill="#37322C" opacity=".20"/>
+  </pattern>
+  <pattern id="toneFine" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1.5" fill="#37322C" opacity=".16"/>
+    <circle cx="7.5" cy="7.5" r="1.5" fill="#37322C" opacity=".16"/>
+  </pattern>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"
+           patternTransform="rotate(35)">
+    <rect width="4" height="12" fill="#37322C" opacity=".13"/>
+  </pattern>
+  <radialGradient id="focus" cx="50%" cy="45%" r="62%">
+    <stop offset="55%" stop-color="#BCAC86" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#BCAC86" stop-opacity=".38"/>
+  </radialGradient>
+  <clipPath id="frame"><rect x="0" y="0" width="1000" height="563" rx="0"/></clipPath>
+</defs>
+  <rect width="1000" height="563" fill="#EFEBE0"/>
+  <rect width="1000" height="563" fill="url(#toneFine)"/>
+
+  <!-- tablet -->
+  <g>
+    <rect x="196" y="96" width="420" height="380" rx="26" fill="#37322C"/>
+    <rect x="214" y="116" width="384" height="316" rx="10" fill="#D9DFE3" stroke="#37322C" stroke-width="6"/>
+    <rect x="214" y="116" width="384" height="316" rx="10" fill="url(#toneFine)"/>
+    <circle cx="406" cy="454" r="12" fill="#6E665E"/>
+    <!-- play button -->
+    <circle cx="406" cy="274" r="80" fill="#FFFFFF" stroke="#37322C" stroke-width="8"/>
+    <path d="M384 236 l64 38 -64 38 z" fill="#37322C"/>
+    <!-- progress bar: a short clip -->
+    <rect x="256" y="394" width="300" height="14" rx="7" fill="#FFFFFF" stroke="#37322C" stroke-width="5"/>
+    <rect x="259" y="397" width="86" height="8" rx="4" fill="#786A4B"/>
+  </g>
+
+  <!-- the idea popping out -->
+  <g>
+    <path d="M770 118 a86 86 0 0 1 86 86 q0 44 -34 70 v34 h-104 v-34 q-34 -26 -34 -70 a86 86 0 0 1 86 -86 z"
+          fill="#EFDFA6" stroke="#37322C" stroke-width="9" stroke-linejoin="round"/>
+    <rect x="722" y="322" width="96" height="20" rx="8" fill="#786A4B" stroke="#37322C" stroke-width="7"/>
+    <rect x="736" y="352" width="68" height="18" rx="8" fill="#786A4B" stroke="#37322C" stroke-width="7"/>
+    <g stroke="#37322C" stroke-width="6" stroke-linecap="round" opacity=".6">
+      <path d="M746 198 q24 -30 48 0" fill="none"/>
+      <line x1="770" y1="204" x2="770" y2="266"/>
+    </g>
+  </g>
+  <line x1="885.7" y1="218.1" x2="945.6" y2="222.3" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="873.8" y1="261.8" x2="927.5" y2="288.5" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="846.1" y1="297.5" x2="885.5" y2="342.8" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="806.8" y1="320.0" x2="825.8" y2="376.9" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="761.9" y1="325.7" x2="757.7" y2="385.6" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="718.2" y1="313.8" x2="691.5" y2="367.5" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="682.5" y1="286.1" x2="637.2" y2="325.5" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="660.0" y1="246.8" x2="603.1" y2="265.8" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="654.3" y1="201.9" x2="594.4" y2="197.7" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="666.2" y1="158.2" x2="612.5" y2="131.5" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="693.9" y1="122.5" x2="654.5" y2="77.2" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="733.2" y1="100.0" x2="714.2" y2="43.1" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="778.1" y1="94.3" x2="782.3" y2="34.4" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="821.8" y1="106.2" x2="848.5" y2="52.5" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="857.5" y1="133.9" x2="902.8" y2="94.5" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+  <line x1="880.0" y1="173.2" x2="936.9" y2="154.2" stroke="#786A4B" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+
+  <!-- 10 minute sand timer -->
+  <g transform="translate(96,340)">
+    <path d="M0 0 h104 l-38 60 38 60 h-104 l38 -60 z" fill="#F7F3EC" stroke="#37322C" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M8 4 h88 l-32 52 z" fill="#BCAC86"/>
+    <path d="M40 104 h24 l28 12 h-80 z" fill="#BCAC86"/>
+    <rect x="-12" y="-16" width="128" height="18" rx="6" fill="#8A6450" stroke="#37322C" stroke-width="7"/>
+    <rect x="-12" y="118" width="128" height="18" rx="6" fill="#8A6450" stroke="#37322C" stroke-width="7"/>
+  </g>
+
+</svg>

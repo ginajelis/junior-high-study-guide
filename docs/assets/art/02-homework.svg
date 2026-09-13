@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 563" role="img" aria-label="攤開的筆記本、鉛筆和馬克杯">
+<defs>
+  <pattern id="tone" width="14" height="14" patternUnits="userSpaceOnUse">
+    <circle cx="4" cy="4" r="2.6" fill="#37322C" opacity=".20"/>
+    <circle cx="11" cy="11" r="2.6" fill="#37322C" opacity=".20"/>
+  </pattern>
+  <pattern id="toneFine" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1.5" fill="#37322C" opacity=".16"/>
+    <circle cx="7.5" cy="7.5" r="1.5" fill="#37322C" opacity=".16"/>
+  </pattern>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"
+           patternTransform="rotate(35)">
+    <rect width="4" height="12" fill="#37322C" opacity=".13"/>
+  </pattern>
+  <radialGradient id="focus" cx="50%" cy="45%" r="62%">
+    <stop offset="55%" stop-color="#A3B2A4" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#A3B2A4" stop-opacity=".38"/>
+  </radialGradient>
+  <clipPath id="frame"><rect x="0" y="0" width="1000" height="563" rx="0"/></clipPath>
+</defs>
+  <rect width="1000" height="563" fill="#EFEAE0"/>
+  <rect width="1000" height="563" fill="url(#hatch)"/>
+
+  <!-- open book -->
+  <g stroke="#37322C" stroke-width="8" stroke-linejoin="round">
+    <path d="M170 126 q160 -34 320 8 q160 -42 320 -8 l0 300 q-160 -34 -320 8 q-160 -42 -320 -8 z" fill="#FFFFFF"/>
+    <path d="M490 134 v300"/>
+  </g>
+  <g stroke="#37322C" stroke-width="4" opacity=".4" stroke-linecap="round">
+    <line x1="222" y1="190" x2="440" y2="176"/>
+    <line x1="222" y1="230" x2="440" y2="216"/>
+    <line x1="222" y1="270" x2="392" y2="258"/>
+    <line x1="222" y1="310" x2="440" y2="298"/>
+    <line x1="540" y1="176" x2="758" y2="190"/>
+    <line x1="540" y1="216" x2="758" y2="230"/>
+    <line x1="540" y1="258" x2="712" y2="270"/>
+  </g>
+  <!-- a line just written, underlined -->
+  <g>
+    <line x1="540" y1="300" x2="700" y2="312" stroke="#5F7263" stroke-width="9" stroke-linecap="round"/>
+    <line x1="540" y1="322" x2="686" y2="333" stroke="#5F7263" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  </g>
+
+  <!-- pencil, mid-stroke -->
+  <g transform="rotate(28 720 330)">
+    <rect x="628" y="320" width="190" height="20" rx="5" fill="#E8C979" stroke="#37322C" stroke-width="6"/>
+    <path d="M628 320 l-32 10 32 10 z" fill="#EFD9C6" stroke="#37322C" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="800" y="320" width="22" height="20" fill="#8A6450" stroke="#37322C" stroke-width="6"/>
+  </g>
+  <line x1="743.9" y1="320.8" x2="799.8" y2="324.7" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="737.2" y1="340.4" x2="783.6" y2="371.7" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="721.5" y1="354.0" x2="746.1" y2="404.3" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="701.2" y1="357.9" x2="697.3" y2="413.8" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="681.6" y1="351.2" x2="650.3" y2="397.6" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="668.0" y1="335.5" x2="617.7" y2="360.1" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="664.1" y1="315.2" x2="608.2" y2="311.3" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="670.8" y1="295.6" x2="624.4" y2="264.3" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="686.5" y1="282.0" x2="661.9" y2="231.7" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="706.8" y1="278.1" x2="710.7" y2="222.2" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="726.4" y1="284.8" x2="757.7" y2="238.4" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  <line x1="740.0" y1="300.5" x2="790.3" y2="275.9" stroke="#5F7263" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+
+  <!-- mug -->
+  <g stroke="#37322C" stroke-width="7" stroke-linejoin="round">
+    <rect x="76" y="360" width="132" height="120" rx="14" fill="#A3B2A4"/>
+    <path d="M208 388 q46 0 46 32 q0 32 -46 32" fill="none"/>
+    <ellipse cx="142" cy="360" rx="66" ry="18" fill="#F7F3EC"/>
+  </g>
+  <g stroke="#37322C" stroke-width="5" fill="none" opacity=".45" stroke-linecap="round">
+    <path d="M116 336 q14 -22 0 -44"/>
+    <path d="M158 336 q14 -22 0 -44"/>
+  </g>
+
+</svg>

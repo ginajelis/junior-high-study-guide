@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 563" role="img" aria-label="大人和小孩隔著桌子說話">
+<defs>
+  <pattern id="tone" width="14" height="14" patternUnits="userSpaceOnUse">
+    <circle cx="4" cy="4" r="2.6" fill="#37322C" opacity=".20"/>
+    <circle cx="11" cy="11" r="2.6" fill="#37322C" opacity=".20"/>
+  </pattern>
+  <pattern id="toneFine" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1.5" fill="#37322C" opacity=".16"/>
+    <circle cx="7.5" cy="7.5" r="1.5" fill="#37322C" opacity=".16"/>
+  </pattern>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"
+           patternTransform="rotate(35)">
+    <rect width="4" height="12" fill="#37322C" opacity=".13"/>
+  </pattern>
+  <radialGradient id="focus" cx="50%" cy="45%" r="62%">
+    <stop offset="55%" stop-color="#BCA6B1" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#BCA6B1" stop-opacity=".38"/>
+  </radialGradient>
+  <clipPath id="frame"><rect x="0" y="0" width="1000" height="563" rx="0"/></clipPath>
+</defs>
+  <rect width="1000" height="563" fill="#F0EAEC"/>
+  <rect width="1000" height="563" fill="url(#toneFine)"/>
+
+  <!-- speech bubbles -->
+  <g>
+    <path d="M108 58 h244 a26 26 0 0 1 26 26 v96 a26 26 0 0 1 -26 26 h-150 l-56 48 8 -48 h-46 a26 26 0 0 1 -26 -26 v-96 a26 26 0 0 1 26 -26 z"
+          fill="#FFFFFF" stroke="#37322C" stroke-width="8" stroke-linejoin="round"/>
+    <g fill="#37322C" opacity=".55">
+      <circle cx="176" cy="132" r="13"/><circle cx="230" cy="132" r="13"/><circle cx="284" cy="132" r="13"/>
+    </g>
+  </g>
+  <g>
+    <path d="M642 40 h250 a26 26 0 0 1 26 26 v104 a26 26 0 0 1 -26 26 h-60 l-52 46 6 -46 h-144 a26 26 0 0 1 -26 -26 v-104 a26 26 0 0 1 26 -26 z"
+          fill="#FFFFFF" stroke="#37322C" stroke-width="8" stroke-linejoin="round"/>
+    <g stroke="#7C6270" stroke-width="12" stroke-linecap="round">
+      <line x1="686" y1="98" x2="866" y2="98"/>
+      <line x1="686" y1="140" x2="808" y2="140"/>
+    </g>
+  </g>
+
+  <!-- table -->
+  <rect x="0" y="440" width="1000" height="22" fill="#8A6450"/>
+  <rect x="0" y="462" width="1000" height="101" fill="#C2A08A"/>
+  <rect x="0" y="462" width="1000" height="101" fill="url(#hatch)"/>
+  <line x1="0" y1="440" x2="1000" y2="440" stroke="#37322C" stroke-width="7"/>
+
+  <!-- kid, left, facing right -->
+  <g>
+    <path d="M136 440 q8 -104 118 -104 q110 0 118 104 z" fill="#5F7263" stroke="#37322C" stroke-width="7" stroke-linejoin="round"/>
+    <circle cx="254" cy="288" r="62" fill="#EFD9C6" stroke="#37322C" stroke-width="7"/>
+    <path d="M254 226 q66 0 62 68 q-18 -32 -62 -32 q-44 0 -62 32 q-4 -68 62 -68 z" fill="#3E3630" stroke="#37322C" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="286" cy="292" r="7" fill="#37322C"/>
+    <circle cx="246" cy="292" r="7" fill="#37322C"/>
+    <path d="M262 322 q14 8 28 0" fill="none" stroke="#37322C" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- adult, right, facing left -->
+  <g>
+    <path d="M602 440 q8 -116 132 -116 q124 0 132 116 z" fill="#7C6270" stroke="#37322C" stroke-width="7" stroke-linejoin="round"/>
+    <circle cx="734" cy="272" r="68" fill="#EFD9C6" stroke="#37322C" stroke-width="7"/>
+    <path d="M734 204 q74 0 68 76 q-4 -34 -30 -44 q-30 22 -76 12 q-10 16 -30 32 q-6 -76 68 -76 z" fill="#3E3630" stroke="#37322C" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="700" cy="278" r="7" fill="#37322C"/>
+    <circle cx="744" cy="278" r="7" fill="#37322C"/>
+    <path d="M704 312 q18 10 36 0" fill="none" stroke="#37322C" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- mug between them -->
+  <g stroke="#37322C" stroke-width="7" stroke-linejoin="round">
+    <rect x="446" y="368" width="96" height="76" rx="10" fill="#A3B2A4"/>
+    <path d="M542 386 q34 0 34 22 q0 22 -34 22" fill="none"/>
+    <ellipse cx="494" cy="368" rx="48" ry="13" fill="#F7F3EC"/>
+  </g>
+
+</svg>

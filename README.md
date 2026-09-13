@@ -76,6 +76,46 @@ python3 -m http.server 8000 --directory docs
   `.github/workflows/deploy-cloudflare.yml` 是備用路線，設了
   `CLOUDFLARE_API_TOKEN` 和 `CLOUDFLARE_ACCOUNT_ID` 才會接手，否則自動跳過。
 
+## 插圖
+
+全部插圖都是為這個站繪製的 SVG，放在 `docs/assets/art/`，共 10 張、約 76KB
+（原本用的 CC0 照片是 1MB）。向量圖可無限縮放，在任何螢幕上都不會糊。
+
+風格是日系漫畫的視覺語彙——粗黑描邊、平塗色塊、網點（screentone）、
+速度線與集中線——但配色沿用站上的莫蘭迪色票，所以插圖不會跟版面打架。
+
+繪製用的腳本在 `tools/art/`：`style.py` 是共用的描邊、網點與效果線函式，
+`draw1.py` 和 `draw2.py` 各自輸出幾張圖。要改圖就改腳本再重新執行：
+
+```bash
+python3 tools/art/draw1.py && python3 tools/art/draw_hero.py && python3 tools/art/draw2.py
+```
+
+## 第 9 篇的闖關
+
+七道關卡對應第 1–7 篇，每一關是一個晚上真的會遇到的決定：選項本身都合理，
+但只有一個符合前面幾篇的原則。選錯會說明原因並可以重選——選錯才是重點。
+
+題目資料全部在 `docs/assets/quest.js` 最上方的 `STAGES` 陣列裡，
+每一關有 `scene`（情境）、`options`（`ok` 標記正解、`say` 是回饋）、
+以及 `link`（對應文章）。要改題目直接改那個陣列就好。
+
+
+## 本機預覽
+
+```bash
+python3 -m http.server 8000 --directory docs
+```
+
+然後開 http://localhost:8000
+
+## 部署
+
+- **GitHub Pages** — 設定為 `main` 分支的 `/docs` 目錄。
+- **Cloudflare** — 由 Workers Builds 監看這個 repo，push 後自行建置，不需要任何密鑰。
+  `.github/workflows/deploy-cloudflare.yml` 是備用路線，設了
+  `CLOUDFLARE_API_TOKEN` 和 `CLOUDFLARE_ACCOUNT_ID` 才會接手，否則自動跳過。
+
 ## 圖片
 
 配圖透過 [Openverse](https://openverse.org/) 搜尋，**全部為 CC0 公眾領域授權**，

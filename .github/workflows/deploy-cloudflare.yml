@@ -1,5 +1,15 @@
 name: Deploy to Cloudflare
 
+# Only one of the two Cloudflare paths is needed:
+#
+#   A. Cloudflare Workers Builds (dashboard → connect this repo).
+#      Cloudflare builds on every push itself; this workflow then stays
+#      dormant because the secrets below are never set.
+#
+#   B. This workflow. Add two repository secrets and it takes over:
+#      CLOUDFLARE_API_TOKEN  — token with the "Edit Cloudflare Workers" template
+#      CLOUDFLARE_ACCOUNT_ID — from the Workers & Pages overview page
+
 on:
   push:
     branches: [main]
@@ -8,12 +18,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Skip cleanly on forks or before the secrets are configured.
-    if: github.repository_owner != ''
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
       - uses: actions/checkout@v4
 
+      - name: Skip when secrets are not configured
+        if: env.CLOUDFLARE_API_TOKEN == ''
+        run: |
+          echo "CLOUDFLARE_API_TOKEN is not set — nothing to do."
+          echo "Cloudflare is presumably deploying this repo through Workers Builds instead."
+
       - name: Deploy with Wrangler
+        if: env.CLOUDFLARE_API_TOKEN != ''
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

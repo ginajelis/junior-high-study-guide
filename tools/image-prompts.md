@@ -1,6 +1,8 @@
 # 生圖提示詞：國一學習節奏指南
 
-十張插圖的生成提示詞。主角是**國中一年級男生**（閱讀對象就是他）。
+八張插圖的生成提示詞。主角是**國中一年級男生**（閱讀對象就是他）。
+
+第 **04**（債務型與累積型）和 **09**（闖關路線圖）**不生圖**，保留現有的向量圖 —— 它們是概念圖不是場景圖，維持圖解的樣子反而合理。
 
 英文段落是要**直接複製貼上**到生圖工具的；中文是說明，不要貼進去。
 
@@ -41,7 +43,7 @@ No text, no logos, no watermark.
 
 ---
 
-## 十張場景
+## 八張場景
 
 生完設定圖之後，每一段都照這個格式：
 
@@ -95,18 +97,6 @@ that threatens to topple over. He is peeking out from behind it with a
 worried face and one anime sweat-drop. Slightly comedic, not distressing.
 ```
 
-### 04 債務型與累積型 → `04-types.png`
-
-```
-Split composition, two halves of one image. Left half: the boy climbing a
-steep staircase where each step rests on the one below, looking up at how
-far it goes, warm clay tones. Right half: the same boy reaching for square
-blocks that float apart and fade away like leaves in the wind, cool dusty
-blue tones. A clear vertical divide down the middle.
-```
-
-> 這張是概念圖，AI 比較難一次到位。多生幾次；真的不行就跟我說，我用現在的向量圖保留這一張。
-
 ### 05 一句話筆記 → `05-onesentence.png`
 
 ```
@@ -144,15 +134,6 @@ relaxed. Two mugs on the table. Soft evening light, gentle and safe mood.
 > 這張的重點是**大人在聽，不是在罵**。如果生出來像在訓話，加一句
 > `The adult is listening calmly and warmly, absolutely not scolding.`
 
-### 09 給國一生的自我判讀 → `09-quest.png`
-
-```
-The boy standing at the start of a winding path made of seven round stepping
-stones leading into the distance, with a small flag at the far end, like an
-RPG level map. He is looking ahead with determination, one fist lightly
-clenched. Gentle rolling hills, warm sunset light, adventurous but calm.
-```
-
 ---
 
 ## 技術規格
@@ -163,20 +144,19 @@ clenched. Gentle rolling hills, warm sunset light, adventurous but calm.
 | 尺寸 | 至少 **1600 × 900**，越大越好，我會再壓縮 |
 | 格式 | PNG 或 JPG 都可以 |
 | 檔名 | 照上面每段標的名字（`hero.png`、`01-rhythm.png`⋯） |
-| 張數 | 10 張 |
+| 張數 | **8 張**（04 和 09 不用生） |
 
 ## 生完之後
 
-把十張圖放進一個資料夾給我，我會處理：
+把八張圖放進一個資料夾給我，我會處理：
 
 - 統一裁切成 1000 × 563，壓到適當大小
-- 換掉網站上的十張插圖（首頁卡片 + 九篇內頁）
-- **重做十張臉書分享圖**（OG 圖也要跟著換）
+- 換掉網站上對應的八張插圖（首頁卡片 + 內頁）
+- **把 04 和 09 的向量圖調成新圖的色調**，讓兩種畫風不會打架
+- **重做十張臉書分享圖**（OG 圖也要跟著換成新主角）
 - 更新每張圖的 alt 文字
 - 部署到 GitHub Pages 和 Cloudflare
 
-## 如果某幾張生不出來
+## 如果還有哪張生不出來
 
-不用勉強。跟我說是哪幾張，我把那幾張保留現在的向量插圖 —— 混用會有一點風格落差，但總比一張明顯畫壞的圖好。
-
-特別容易失敗的是 **04**（概念分割圖）和 **09**（關卡路線圖），這兩張本來就不是 AI 擅長的題材。
+不用勉強，跟我說是哪一張，一樣保留現有的向量圖就好。

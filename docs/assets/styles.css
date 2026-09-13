@@ -730,25 +730,24 @@ body.index { background: var(--index-bg); }
   overflow: hidden;
 }
 
+.card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Scrim so the overlaid pills stay legible on any photo */
 .card-cover::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    135deg, transparent 0 14px, rgba(255, 255, 255, .28) 14px 15px);
-  opacity: .55;
+  inset: 0 0 55% 0;
+  background: linear-gradient(rgba(0, 0, 0, .3), transparent);
+  pointer-events: none;
 }
 
-.card-cover .big {
-  font-family: var(--serif);
-  font-size: 3.6rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--hue);
-  opacity: .92;
-  position: relative;
-  z-index: 1;
-}
+.card:hover .card-cover img { transform: scale(1.02); }
+.card-cover img { transition: transform .3s ease; }
 
 .card-cover .tag {
   position: absolute;
@@ -879,4 +878,30 @@ body.index { background: var(--index-bg); }
   .cards { display: block; }
   .card { page-break-inside: avoid; margin-bottom: .6rem; box-shadow: none; }
   .card-cover { display: none; }
+}
+
+/* ── Article hero image ──────────────────────────────────── */
+.hero { margin: 0 0 var(--gap); }
+
+.hero img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  background: var(--card-sunken);
+}
+
+.figcredit {
+  font-size: .78rem;
+  line-height: 1.8;
+  color: var(--faint);
+  margin: .55rem 0 0;
+}
+
+.figcredit a { color: var(--faint); text-decoration-color: var(--border-strong); }
+.figcredit a:hover { color: var(--accent); }
+
+@media print {
+  .hero, .card-cover { display: none !important; }
 }

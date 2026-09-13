@@ -60,6 +60,23 @@ python3 -m http.server 8000 --directory docs
   `.github/workflows/deploy-cloudflare.yml` 是備用路線，設了
   `CLOUDFLARE_API_TOKEN` 和 `CLOUDFLARE_ACCOUNT_ID` 才會接手，否則自動跳過。
 
+## 圖片
+
+配圖透過 [Openverse](https://openverse.org/) 搜尋，**全部為 CC0 公眾領域授權**，
+已下載到 `docs/assets/covers/` 並統一處理成 1200×675（16:9）。
+CC0 不要求標示出處，但每篇文章仍附上來源連結。
+
+| 篇章 | 圖片 | 作者 | 來源 | 授權 |
+| --- | --- | --- | --- | --- |
+| 週間作息安排 | [Alarm Clock](https://stocksnap.io/photo/alarm-clock-VI3GY3LRD4) | Jessica Monte | StockSnap | CC0 |
+| 作業就是複習 | [Writing Drawing](https://stocksnap.io/photo/writing-drawing-8Y0EDX4VP9) | Green Chameleon | StockSnap | CC0 |
+| 作業很多又不會寫 | [Free stack spiral notebook image](https://www.rawpixel.com/image/5908233/image-paper-book-public-domain) | — | Rawpixel | CC0 |
+| 債務型與累積型 | [Old stairs garden](https://www.rawpixel.com/image/3289030/free-photo-image-banister-best-stone-pictures-images-brick) | — | Rawpixel | CC0 |
+| 一句話筆記 | [Sticky Notes](https://stocksnap.io/photo/sticky-notes-NCEC9BTO9Z) | Matt Moloney | StockSnap | CC0 |
+| 頻繁小考的技巧 | [Pencil test paper](https://www.rawpixel.com/image/3338154/free-photo-image-exam-cc0-creative-commons) | — | Rawpixel | CC0 |
+| 資源清單 | [Laptop Apple](https://stocksnap.io/photo/laptop-apple-DMY4V8V5W9) | Mateusz Dach | StockSnap | CC0 |
+| 給家長：訊號判讀 | [Mother Daughter](https://stocksnap.io/photo/mother-daughter-FHQOAULEKZ) | Family First | StockSnap | CC0 |
+
 ## 列印
 
 每一頁都有專門的列印樣式（去掉頁首、篩選列與按鈕，避免區塊跨頁）。

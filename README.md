@@ -10,7 +10,9 @@
 | 環境 | 網址 |
 | --- | --- |
 | GitHub Pages | https://ginajelis.github.io/junior-high-study-guide/ |
-| Cloudflare Workers | 見 repo 的 Deployments |
+| Cloudflare Workers | https://junior-high-study-guide.ginajelis.workers.dev |
+
+兩邊都在 push 到 `main` 之後自動更新。
 
 ## 結構
 

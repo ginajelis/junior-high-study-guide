@@ -63,11 +63,12 @@ python3 -m http.server 8000 --directory docs
 ## 圖片
 
 配圖透過 [Openverse](https://openverse.org/) 搜尋，**全部為 CC0 公眾領域授權**，
-已下載到 `docs/assets/covers/` 並統一處理成 1200×675（16:9）。
+已下載到 `docs/assets/`：卡片封面統一為 1000×563（16:9），首頁 hero 為 960×540。
 CC0 不要求標示出處，但每篇文章仍附上來源連結。
 
 | 篇章 | 圖片 | 作者 | 來源 | 授權 |
 | --- | --- | --- | --- | --- |
+| 首頁 Hero | [Book Interior](https://stocksnap.io/photo/book-interior-KLXLJSBKJI) | Candace McDaniel | StockSnap | CC0 |
 | 週間作息安排 | [Alarm Clock](https://stocksnap.io/photo/alarm-clock-VI3GY3LRD4) | Jessica Monte | StockSnap | CC0 |
 | 作業就是複習 | [Writing Drawing](https://stocksnap.io/photo/writing-drawing-8Y0EDX4VP9) | Green Chameleon | StockSnap | CC0 |
 | 作業很多又不會寫 | [Free stack spiral notebook image](https://www.rawpixel.com/image/5908233/image-paper-book-public-domain) | — | Rawpixel | CC0 |

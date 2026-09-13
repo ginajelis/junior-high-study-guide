@@ -610,14 +610,14 @@ body.index { background: var(--index-bg); }
 
 .index-head h1 {
   margin: 0 auto .9rem;
-  max-width: 22em;
+  text-wrap: balance;
 }
 
 .index-head .standfirst {
   border: 0;
   padding: 0;
   margin: 0 auto;
-  max-width: 40em;
+  max-width: 40rem;
   text-align: left;
   color: var(--muted);
   font-size: .98rem;
@@ -905,3 +905,24 @@ body.index { background: var(--index-bg); }
 @media print {
   .hero, .card-cover { display: none !important; }
 }
+
+/* ── Index hero image ────────────────────────────────────── */
+/* Constrained to the text measure and scaled proportionally. */
+.index-hero {
+  margin: 2.25rem auto 0;
+  max-width: 40rem;         /* same measure as .index-head .standfirst */
+}
+
+.index-hero img {
+  width: 100%;
+  height: auto;             /* keep the source aspect ratio */
+  display: block;
+  border-radius: var(--radius);
+  background: var(--card-sunken);
+}
+
+@media print {
+  .index-hero { display: none !important; }
+}
+
+.index-hero .figcredit { text-align: center; }
